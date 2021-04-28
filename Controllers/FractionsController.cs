@@ -41,67 +41,67 @@ namespace SortexAPI.Controllers
             return fraction;
         }
 
-        // PUT: api/Fractions/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutFraction(int id, Fraction fraction)
-        {
-            if (id != fraction.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Fractions/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutFraction(int id, Fraction fraction)
+        //{
+        //    if (id != fraction.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(fraction).State = EntityState.Modified;
+        //    _context.Entry(fraction).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!FractionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!FractionExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Fractions
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Fraction>> PostFraction(Fraction fraction)
-        {
-            _context.Fractions.Add(fraction);
-            await _context.SaveChangesAsync();
+        //// POST: api/Fractions
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Fraction>> PostFraction(Fraction fraction)
+        //{
+        //    _context.Fractions.Add(fraction);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetFraction", new { id = fraction.Id }, fraction);
-        }
+        //    return CreatedAtAction("GetFraction", new { id = fraction.Id }, fraction);
+        //}
 
-        // DELETE: api/Fractions/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteFraction(int id)
-        {
-            var fraction = await _context.Fractions.FindAsync(id);
-            if (fraction == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Fractions/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteFraction(int id)
+        //{
+        //    var fraction = await _context.Fractions.FindAsync(id);
+        //    if (fraction == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Fractions.Remove(fraction);
-            await _context.SaveChangesAsync();
+        //    _context.Fractions.Remove(fraction);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool FractionExists(int id)
-        {
-            return _context.Fractions.Any(e => e.Id == id);
-        }
+        //private bool FractionExists(int id)
+        //{
+        //    return _context.Fractions.Any(e => e.Id == id);
+        //}
     }
 }

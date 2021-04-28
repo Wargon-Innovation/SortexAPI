@@ -41,67 +41,67 @@ namespace SortexAPI.Controllers
             return trendImageMM;
         }
 
-        // PUT: api/TrendImageMMs/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTrendImageMM(int id, TrendImageMM trendImageMM)
-        {
-            if (id != trendImageMM.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/TrendImageMMs/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutTrendImageMM(int id, TrendImageMM trendImageMM)
+        //{
+        //    if (id != trendImageMM.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(trendImageMM).State = EntityState.Modified;
+        //    _context.Entry(trendImageMM).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TrendImageMMExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!TrendImageMMExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/TrendImageMMs
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<TrendImageMM>> PostTrendImageMM(TrendImageMM trendImageMM)
-        {
-            _context.TrendImageMMs.Add(trendImageMM);
-            await _context.SaveChangesAsync();
+        //// POST: api/TrendImageMMs
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<TrendImageMM>> PostTrendImageMM(TrendImageMM trendImageMM)
+        //{
+        //    _context.TrendImageMMs.Add(trendImageMM);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTrendImageMM", new { id = trendImageMM.Id }, trendImageMM);
-        }
+        //    return CreatedAtAction("GetTrendImageMM", new { id = trendImageMM.Id }, trendImageMM);
+        //}
 
-        // DELETE: api/TrendImageMMs/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTrendImageMM(int id)
-        {
-            var trendImageMM = await _context.TrendImageMMs.FindAsync(id);
-            if (trendImageMM == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/TrendImageMMs/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteTrendImageMM(int id)
+        //{
+        //    var trendImageMM = await _context.TrendImageMMs.FindAsync(id);
+        //    if (trendImageMM == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.TrendImageMMs.Remove(trendImageMM);
-            await _context.SaveChangesAsync();
+        //    _context.TrendImageMMs.Remove(trendImageMM);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool TrendImageMMExists(int id)
-        {
-            return _context.TrendImageMMs.Any(e => e.Id == id);
-        }
+        //private bool TrendImageMMExists(int id)
+        //{
+        //    return _context.TrendImageMMs.Any(e => e.Id == id);
+        //}
     }
 }

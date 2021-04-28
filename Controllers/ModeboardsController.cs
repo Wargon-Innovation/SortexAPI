@@ -41,67 +41,67 @@ namespace SortexAPI.Controllers
             return modeboard;
         }
 
-        // PUT: api/Modeboards/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutModeboard(int id, Modeboard modeboard)
-        {
-            if (id != modeboard.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Modeboards/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutModeboard(int id, Modeboard modeboard)
+        //{
+        //    if (id != modeboard.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(modeboard).State = EntityState.Modified;
+        //    _context.Entry(modeboard).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ModeboardExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ModeboardExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Modeboards
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Modeboard>> PostModeboard(Modeboard modeboard)
-        {
-            _context.Modeboards.Add(modeboard);
-            await _context.SaveChangesAsync();
+        //// POST: api/Modeboards
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Modeboard>> PostModeboard(Modeboard modeboard)
+        //{
+        //    _context.Modeboards.Add(modeboard);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetModeboard", new { id = modeboard.Id }, modeboard);
-        }
+        //    return CreatedAtAction("GetModeboard", new { id = modeboard.Id }, modeboard);
+        //}
 
-        // DELETE: api/Modeboards/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteModeboard(int id)
-        {
-            var modeboard = await _context.Modeboards.FindAsync(id);
-            if (modeboard == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Modeboards/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteModeboard(int id)
+        //{
+        //    var modeboard = await _context.Modeboards.FindAsync(id);
+        //    if (modeboard == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Modeboards.Remove(modeboard);
-            await _context.SaveChangesAsync();
+        //    _context.Modeboards.Remove(modeboard);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool ModeboardExists(int id)
-        {
-            return _context.Modeboards.Any(e => e.Id == id);
-        }
+        //private bool ModeboardExists(int id)
+        //{
+        //    return _context.Modeboards.Any(e => e.Id == id);
+        //}
     }
 }

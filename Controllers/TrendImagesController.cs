@@ -41,67 +41,67 @@ namespace SortexAPI.Controllers
             return trendImage;
         }
 
-        // PUT: api/TrendImages/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTrendImage(int id, TrendImage trendImage)
-        {
-            if (id != trendImage.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/TrendImages/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutTrendImage(int id, TrendImage trendImage)
+        //{
+        //    if (id != trendImage.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(trendImage).State = EntityState.Modified;
+        //    _context.Entry(trendImage).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TrendImageExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!TrendImageExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/TrendImages
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<TrendImage>> PostTrendImage(TrendImage trendImage)
-        {
-            _context.TrendImages.Add(trendImage);
-            await _context.SaveChangesAsync();
+        //// POST: api/TrendImages
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<TrendImage>> PostTrendImage(TrendImage trendImage)
+        //{
+        //    _context.TrendImages.Add(trendImage);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTrendImage", new { id = trendImage.Id }, trendImage);
-        }
+        //    return CreatedAtAction("GetTrendImage", new { id = trendImage.Id }, trendImage);
+        //}
 
-        // DELETE: api/TrendImages/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTrendImage(int id)
-        {
-            var trendImage = await _context.TrendImages.FindAsync(id);
-            if (trendImage == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/TrendImages/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteTrendImage(int id)
+        //{
+        //    var trendImage = await _context.TrendImages.FindAsync(id);
+        //    if (trendImage == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.TrendImages.Remove(trendImage);
-            await _context.SaveChangesAsync();
+        //    _context.TrendImages.Remove(trendImage);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool TrendImageExists(int id)
-        {
-            return _context.TrendImages.Any(e => e.Id == id);
-        }
+        //private bool TrendImageExists(int id)
+        //{
+        //    return _context.TrendImages.Any(e => e.Id == id);
+        //}
     }
 }

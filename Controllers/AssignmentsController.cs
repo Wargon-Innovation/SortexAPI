@@ -41,67 +41,67 @@ namespace SortexAPI.Controllers
             return assignment;
         }
 
-        // PUT: api/Assignments/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAssignment(int id, Assignment assignment)
-        {
-            if (id != assignment.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Assignments/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutAssignment(int id, Assignment assignment)
+        //{
+        //    if (id != assignment.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(assignment).State = EntityState.Modified;
+        //    _context.Entry(assignment).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AssignmentExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!AssignmentExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Assignments
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Assignment>> PostAssignment(Assignment assignment)
-        {
-            _context.Assignments.Add(assignment);
-            await _context.SaveChangesAsync();
+        //// POST: api/Assignments
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<Assignment>> PostAssignment(Assignment assignment)
+        //{
+        //    _context.Assignments.Add(assignment);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAssignment", new { id = assignment.Id }, assignment);
-        }
+        //    return CreatedAtAction("GetAssignment", new { id = assignment.Id }, assignment);
+        //}
 
-        // DELETE: api/Assignments/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAssignment(int id)
-        {
-            var assignment = await _context.Assignments.FindAsync(id);
-            if (assignment == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Assignments/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteAssignment(int id)
+        //{
+        //    var assignment = await _context.Assignments.FindAsync(id);
+        //    if (assignment == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Assignments.Remove(assignment);
-            await _context.SaveChangesAsync();
+        //    _context.Assignments.Remove(assignment);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool AssignmentExists(int id)
-        {
-            return _context.Assignments.Any(e => e.Id == id);
-        }
+        //private bool AssignmentExists(int id)
+        //{
+        //    return _context.Assignments.Any(e => e.Id == id);
+        //}
     }
 }

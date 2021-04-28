@@ -41,67 +41,67 @@ namespace SortexAPI.Controllers
             return brandImage;
         }
 
-        // PUT: api/BrandImages/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutBrandImage(int id, BrandImage brandImage)
-        {
-            if (id != brandImage.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/BrandImages/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutBrandImage(int id, BrandImage brandImage)
+        //{
+        //    if (id != brandImage.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(brandImage).State = EntityState.Modified;
+        //    _context.Entry(brandImage).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!BrandImageExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!BrandImageExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/BrandImages
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<BrandImage>> PostBrandImage(BrandImage brandImage)
-        {
-            _context.BrandImages.Add(brandImage);
-            await _context.SaveChangesAsync();
+        //// POST: api/BrandImages
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<BrandImage>> PostBrandImage(BrandImage brandImage)
+        //{
+        //    _context.BrandImages.Add(brandImage);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBrandImage", new { id = brandImage.Id }, brandImage);
-        }
+        //    return CreatedAtAction("GetBrandImage", new { id = brandImage.Id }, brandImage);
+        //}
 
-        // DELETE: api/BrandImages/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBrandImage(int id)
-        {
-            var brandImage = await _context.BrandImages.FindAsync(id);
-            if (brandImage == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/BrandImages/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteBrandImage(int id)
+        //{
+        //    var brandImage = await _context.BrandImages.FindAsync(id);
+        //    if (brandImage == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.BrandImages.Remove(brandImage);
-            await _context.SaveChangesAsync();
+        //    _context.BrandImages.Remove(brandImage);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool BrandImageExists(int id)
-        {
-            return _context.BrandImages.Any(e => e.Id == id);
-        }
+        //private bool BrandImageExists(int id)
+        //{
+        //    return _context.BrandImages.Any(e => e.Id == id);
+        //}
     }
 }
