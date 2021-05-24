@@ -9,6 +9,7 @@ namespace SortexAPI.Models
     {
         public int Id { get; set; }
         public string Image { get; set; }
+        public string ImageDescription { get; set; }
         public string FilePath { get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
